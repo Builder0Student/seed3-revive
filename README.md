@@ -54,7 +54,7 @@ The game APK was decoded with apktool, and its Java side was patched in smali. I
 
 ### 1. The game is 32-bit, the phone is 64-bit only → a translation layer
 
-**ZettaBridge** is a small arm64 Android app that runs 32-bit ARM code on a 64-bit-only CPU. It carries its own 32-bit system libraries, and it passes graphics, sound, touch and file calls through to the phone's real 64-bit libraries. The original game APK is stored inside it at `assets/bundled/game.apk` and imported automatically on first launch. It's the same translation layer as in Revive, rebranded as its own app (`com.zettabridge.seed3`), so both games can be installed side by side.
+A small arm64 Android app that runs 32-bit ARM code on a 64-bit-only CPU. It carries its own 32-bit system libraries, and it passes graphics, sound, touch and file calls through to the phone's real 64-bit libraries. The original game APK is stored inside it at `assets/bundled/game.apk` and imported automatically on first launch. It's the same translation layer as in Revive
 
 ### 2. Startup steps that modern Android blocks → switched off
 
@@ -91,7 +91,6 @@ The fix changes one byte. Every other Java call in the library was then checked 
 - rankings, which show your own best score
 - a welcome notice
 
-Its data is saved in `Android/data/com.zettabridge.seed3/files/seed3server/`.
 
 ### 5. Save crashes → a save key that changed every time
 
